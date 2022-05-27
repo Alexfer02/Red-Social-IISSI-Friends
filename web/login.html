@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="web\images\favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="web\css\style_login.css">
+    <meta name=" viewport " content=" width=device-width , initial-scale=1 ,shrink-to-fit=no ">
+    <link rel=" stylesheet " href="/css/bootstrap.min.css ">
+    <link rel=" stylesheet " href="/css/font-awesome.min.css ">
+    <script src="/js/libs/jquery-3.4.1.min.js "> </script>
+    <script src="/js/libs/popper.min.js "> </script>
+    <script src="/js/libs/bootstrap.min.js "> </script>
+    <script src="/js/libs/axios.min.js"></script>
+    <script src="js/utils/include.js"></script>
+    <script src="js/login.js" type="module"></script>
+    <script src="js/header.js" type="module"></script>
+
+</head>
+
+<body>
+    <center><div id="page-header"></div></center>
+    <div class="container" >
+
+        <div class="row text-center">
+            <div class="col-md">
+                <h1>Login</h1>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="errors"></div>
+
+        <form id="form-login">
+            <div class="row">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <label class="form-label" for="username-input">Username</label>
+                        <input class="form-control" type="text" name="username" id="username-input"
+                            placeholder="Username">
+                    </div>
+                </div>
+
+                <div class="col-md">
+                    <div class="form-floating">
+                        <label class="form-label" for="password-input">Password</label>
+                        <input class="form-control" type="password" name="password" id="password-input"
+                            placeholder="Password">
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br><br><br>
+            <div class="row text-center">
+                <div class="col-md">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</body>
+<script>
+    include("header.html", "#page-header");
+</script>
+</html>

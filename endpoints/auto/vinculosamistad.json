@@ -1,0 +1,68 @@
+{
+    "getAll": {
+        "route": "/vinculosamistad",
+        "method": "GET",
+        "sql": "SELECT * FROM vinculosamistad",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all vinculosamistad"
+    },
+    "getById": {
+        "route": "/vinculosamistad/$vinculoAmistadId",
+        "method": "GET",
+        "sql": "SELECT * FROM vinculosamistad WHERE vinculoAmistadId = $vinculoAmistadId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'vinculosamistad' by its primary key"
+    },
+    "create": {
+        "route": "/vinculosamistad",
+        "method": "POST",
+        "sql": "INSERT INTO vinculosamistad(userIdSolicitante, userIdReceptor, fechaSolicitud, fechaAceptacion, fechaRevocacionSolicitud, vinculoAmistadId) VALUES ($userIdSolicitante, $userIdReceptor, $fechaSolicitud, $fechaAceptacion, $fechaRevocacionSolicitud, $vinculoAmistadId)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'vinculosamistad'",
+        "request_body_params": [
+            "userIdSolicitante",
+            "userIdReceptor",
+            "fechaSolicitud",
+            "fechaAceptacion",
+            "fechaRevocacionSolicitud",
+            "vinculoAmistadId"
+        ]
+    },
+    "update": {
+        "route": "/vinculosamistad/$vinculoAmistadId",
+        "method": "PUT",
+        "sql": "UPDATE vinculosamistad SET userIdSolicitante = $userIdSolicitante, userIdReceptor = $userIdReceptor, fechaSolicitud = $fechaSolicitud, fechaAceptacion = $fechaAceptacion, fechaRevocacionSolicitud = $fechaRevocacionSolicitud, vinculoAmistadId = $vinculoAmistadId WHERE vinculoAmistadId = $vinculoAmistadId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'vinculosamistad' by its primary key",
+        "request_body_params": [
+            "userIdSolicitante",
+            "userIdReceptor",
+            "fechaSolicitud",
+            "fechaAceptacion",
+            "fechaRevocacionSolicitud",
+            "vinculoAmistadId"
+        ]
+    },
+    "delete": {
+        "route": "/vinculosamistad/$vinculoAmistadId",
+        "method": "DELETE",
+        "sql": "DELETE FROM vinculosamistad WHERE vinculoAmistadId = $vinculoAmistadId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'vinculosamistad' by its primary key"
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "getAll": {
+        "route": "/userhobbies",
+        "method": "GET",
+        "sql": "SELECT * FROM userhobbies",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all userhobbies"
+    },
+    "getById": {
+        "route": "/userhobbies/$userHobbyId",
+        "method": "GET",
+        "sql": "SELECT * FROM userhobbies WHERE userHobbyId = $userHobbyId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'userhobbies' by its primary key"
+    },
+    "create": {
+        "route": "/userhobbies",
+        "method": "POST",
+        "sql": "INSERT INTO userhobbies(userId, hobbyId) VALUES ($userId, $hobbyId)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'userhobbies'",
+        "request_body_params": [
+            "userId",
+            "hobbyId"
+        ]
+    },
+    "update": {
+        "route": "/userhobbies/$userHobbyId",
+        "method": "PUT",
+        "sql": "UPDATE userhobbies SET userId = $userId, hobbyId = $hobbyId WHERE userHobbyId = $userHobbyId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'userhobbies' by its primary key",
+        "request_body_params": [
+            "userId",
+            "hobbyId"
+        ]
+    },
+    "delete": {
+        "route": "/userhobbies/$userHobbyId",
+        "method": "DELETE",
+        "sql": "DELETE FROM userhobbies WHERE userHobbyId = $userHobbyId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'userhobbies' by its primary key"
+    }
+}

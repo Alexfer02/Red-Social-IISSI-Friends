@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/searchbar.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="icon" href="web\images\favicon.ico">
+    <link rel="stylesheet" href="/css/fecha.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/profilestyle.css">
+
+    <script src="/js/profile.js" type="module"></script>
+    <script src="js/utils/include.js"></script>
+    <script src="js/header.js" type="module"></script>
+    <script src="js/libs/axios.min.js"></script>
+    <script src="/js/libs/jquery-3.4.1.min.js "> </script>
+    <script src="js/libs/bootstrap.min.js"></script>
+
+
+
+    <title>Perfil</title>
+</head>
+
+<body>
+    <center>
+        <div id="page-header"></div>
+    </center>
+
+
+    <div class="container">
+
+        <div class="container">
+            <div id="amigos-container"></div>
+            <h2>Mis amigos<h2>
+            
+        </div>
+
+        <hr>
+
+        <div class="container">
+            <div id="solicitudes-container"></div>
+            <h2>Solicitudes Pendientes<h2>
+            
+        </div>
+      
+        <div id="errors"></div>
+
+        <hr>
+
+        <div id="card-gallery">
+
+        </div>
+    </div>
+
+    <script>
+        include("header.html", "#page-header");
+    </script>
+</body>
+
+</html>

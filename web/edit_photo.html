@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="/js/libs/jquery-3.4.1.min.js "></script>
+    <script src="js/utils/include.js"></script>
+    <script src="js/libs/axios.min.js"></script>
+    <script src="js/subidafoto.js" type="module"></script>
+    <script src="js/header.js" type="module"></script>
+
+    <title>Editar fotos</title>
+</head>
+
+<body class="dark">
+    <div id="header"></div>
+
+    <div class="container">
+
+        <h1 class="text-center" id="page-title">
+            ¡Edita la foto!
+        </h1>
+        <hr>
+
+        <div id="errors"></div>
+
+        <div class="row">
+
+            <form id="form-photo-upload">
+                <div class="form-group">
+                    <label for="input-url">URL:</label>
+                    <input type="text" class="form-control" id="input-url" name="pictureURL" placeholder="Photo URL">
+                </div>
+                <div class="form-group">
+                    <label for="input-title">Title:</label>
+                    <input required type="text" class="form-control" id="input-title" name="name"
+                        placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <label for="input-description">Description:</label>
+                    <textarea class="form-control" id="input-description" name="description"
+                        placeholder="Describe your image..." rows="4"></textarea>
+                </div>
+                <div class="row">
+                    <div class="col-md text-center">
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="col-md">
+                <img alt="Preview" id="photo-preview" class="img-fluid">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        include("header.html", "#header");
+    </script>
+</body>
+
+</html>

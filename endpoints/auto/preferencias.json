@@ -1,0 +1,84 @@
+{
+    "getAll": {
+        "route": "/preferencias",
+        "method": "GET",
+        "sql": "SELECT * FROM preferencias",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all preferencias"
+    },
+    "getById": {
+        "route": "/preferencias/$preferenciasId",
+        "method": "GET",
+        "sql": "SELECT * FROM preferencias WHERE preferenciasId = $preferenciasId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'preferencias' by its primary key"
+    },
+    "create": {
+        "route": "/preferencias",
+        "method": "POST",
+        "sql": "INSERT INTO preferencias(userId, edadMax, edadMin, estaturaMax, estaturaMin, pesoMax, pesoMin, gender, hairColor, eyeColor, ciudad, provincia, codPostal, direccion) VALUES ($userId, $edadMax, $edadMin, $estaturaMax, $estaturaMin, $pesoMax, $pesoMin, $gender, $hairColor, $eyeColor, $ciudad, $provincia, $codPostal, $direccion)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'preferencias'",
+        "request_body_params": [
+            "userId",
+            "edadMax",
+            "edadMin",
+            "estaturaMax",
+            "estaturaMin",
+            "pesoMax",
+            "pesoMin",
+            "gender",
+            "hairColor",
+            "eyeColor",
+            "ciudad",
+            "provincia",
+            "codPostal",
+            "direccion"
+        ]
+    },
+    "update": {
+        "route": "/preferencias/$preferenciasId",
+        "method": "PUT",
+        "sql": "UPDATE preferencias SET userId = $userId, edadMax = $edadMax, edadMin = $edadMin, estaturaMax = $estaturaMax, estaturaMin = $estaturaMin, pesoMax = $pesoMax, pesoMin = $pesoMin, gender = $gender, hairColor = $hairColor, eyeColor = $eyeColor, ciudad = $ciudad, provincia = $provincia, codPostal = $codPostal, direccion = $direccion WHERE preferenciasId = $preferenciasId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'preferencias' by its primary key",
+        "request_body_params": [
+            "userId",
+            "edadMax",
+            "edadMin",
+            "estaturaMax",
+            "estaturaMin",
+            "pesoMax",
+            "pesoMin",
+            "gender",
+            "hairColor",
+            "eyeColor",
+            "ciudad",
+            "provincia",
+            "codPostal",
+            "direccion"
+        ]
+    },
+    "delete": {
+        "route": "/preferencias/$preferenciasId",
+        "method": "DELETE",
+        "sql": "DELETE FROM preferencias WHERE preferenciasId = $preferenciasId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'preferencias' by its primary key"
+    }
+}

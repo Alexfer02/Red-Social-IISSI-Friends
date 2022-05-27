@@ -1,0 +1,21 @@
+div.photo-block {
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-family: sans-serif;
+    margin: 5px;
+    padding: 5px;
+    transition: all 0.2s;
+}
+
+div.photo-block:hover {
+    border-color: white;
+}
+body{
+    background-color: var(--white);
+	background: url("https://img.freepik.com/foto-gratis/resumen-fondo-azul-gradiente-fondo-azul-pagina-web-o-presentacion_79161-487.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}

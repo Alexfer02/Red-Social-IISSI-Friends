@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tus preferencias</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/preferencias.css">
+    <script src="/js/libs/jquery-3.4.1.min.js "> </script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/utils/include.js"></script>
+    <script src="js/libs/axios.min.js"></script>
+    <script src="js/preferencias.js" type="module"></script>
+    <script src="js/header.js" type="module"></script>
+    <script>addEventListener('load', inicio, false);
+
+        function inicio() {
+            document.getElementById('range1').addEventListener('change', cambioValor, false);
+            document.getElementById('range2').addEventListener('change', cambioValor, false);
+            document.getElementById('range3').addEventListener('change', cambioValor, false);
+            document.getElementById('range4').addEventListener('change', cambioValor, false);
+            document.getElementById('range5').addEventListener('change', cambioValor, false);
+            document.getElementById('range6').addEventListener('change', cambioValor, false);
+
+        }
+
+        function cambioValor() {
+            document.getElementById('range1-value').innerHTML = document.getElementById('range1').value;
+            document.getElementById('range2-value').innerHTML = document.getElementById('range2').value;
+            document.getElementById('range3-value').innerHTML = document.getElementById('range3').value;
+            document.getElementById('range4-value').innerHTML = document.getElementById('range4').value;
+            document.getElementById('range5-value').innerHTML = document.getElementById('range5').value;
+            document.getElementById('range6-value').innerHTML = document.getElementById('range6').value;
+        }   </script>
+
+</head>
+
+<body>
+    <div id="page-header"></div>
+    <div id="errors"></div>
+    <center>
+        <h1>Edita tus preferencias</h1>
+    </center>
+    <div>Se recomienda usar las flechas del teclado para mayor precisión</div>
+    <br><br><br><br>
+    <div class="container">
+        <form id="preferences-form">
+            <div class="row">
+                <div class="col-md">
+                    <label for="range1">Edad Mínima</label>
+                    <input id="range1" name="edadMin" type="range" min="18" max="100" value="">
+                    <span id="range1-value"></span>
+                    <br><br>
+                    <label for="range2">Edad Máxima</label>
+                    <input id="range2" name="edadMax" type="range" min="18" max="100" value="">
+                    <span id="range2-value"></span>
+                </div>
+
+                <div class="col-md">
+                    <label for="range3">Estatura Mínima</label>
+                    <input id="range3" name="estaturaMin" type="range" min="30" max="220" value="">
+                    <span id="range3-value"></span>
+                    <br><br>
+                    <label for="range4">Estatura Máxima</label>
+                    <input id="range4" name="estaturaMax" type="range" min="30" max="220" value="">
+                    <span id="range4-value"></span>
+                </div>
+
+                <div class="col-md">
+                    <label for="range5">Peso Mínimo</label>
+                    <input id="range5" name="pesoMin" type="range" min="30" max="300" value="">
+                    <span id="range5-value"></span>
+                    <br><br>
+                    <label for="range6">Peso Máximo</label>
+                    <input id="range6" name="pesoMax" type="range" min="30" max="300" value="">
+                    <span id="range6-value"></span>
+                </div>
+            </div>
+            <br><br><br>
+
+            <div class="row">
+                <div class="col-md">
+                    <label class="form-label" for="gender-input">Genero</label>
+                    <div class="input-group">
+                        <select class="form-select" name="gender" id="gender-id" selected="${preferencia.gender}">
+                            <option value="male" selected>Hombre</option>
+                            <option value="female">Mujer</option>
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="col-md">
+                    <label class="form-label" for="hairColor-input">Color de pelo</label>
+                    <div class="input-group">
+                        <select class="form-select" name="hairColor" id="hairColor-input"
+                            selected="${preferencia.hairColor}">
+                            <option value="black">Negro</option>
+                            <option value="brunette">Moreno</option>
+                            <option value="blonde">Rubio</option>
+                            <option value="ginger">Pelirrojo</option>
+                            <option value="white">Blanco</option>
+                            <option value="gray">Gris</option>
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="col-md">
+                    <label for="eyeColor" class="form-label">Color de ojos</label>
+                    <div class="input-group">
+                        <select class="form-select" name="eyeColor" id="eyeColor-input"
+                            selected="${preferencia.eyeColor}">
+                            <option selected value="black">Negro</option>
+                            <option value="brown">Marrón</option>
+                            <option value="blue">Azul</option>
+                            <option value="green">Verde</option>
+                            <option value="gray">Gris</option>
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <br><br><br>
+
+                <div class="col-md">
+                    <label for="province-input">Provincia</label>
+                    <div class="input-group" id="province-select-container">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md">
+                    <center><button class="btn btn-primary" type="submit">Enviar</button></center>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    </div>
+
+
+
+
+</body>
+<script>
+    include("header.html", "#page-header");
+</script>
+
+</html>

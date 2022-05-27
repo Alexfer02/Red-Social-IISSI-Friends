@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Únete a IISSI-Friends</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style_register.css">
+    <script src="/js/libs/jquery-3.4.1.min.js "> </script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/utils/include.js"></script>
+    <script src="js/libs/axios.min.js"></script>
+    <script src="js/register.js" type="module"></script>
+    <script src="js/header.js" type="module"></script>
+</head>
+<body>
+    <div id="page-header"></div>
+    <div id="errors"></div>
+    <div class="container">
+        <form id="register-form">
+            <div class="row">
+                <div class="col-md">
+    
+                    <div class="form-floating">
+                        <label class="form-label" for="username-input">Username</label>
+                        <input class="form-control" type="text" name="username" id="username-input"
+                            placeholder="Username">
+                        
+                    </div>
+                    
+                </div>
+    
+                <div class="col-md">
+                    <label class="form-label" for="email-input">Email:</label>
+                    <input class="form-control" type="email" name="email" id="email-input" placeholder="email@hostname.com">
+                   
+                </div>
+                
+            </div>
+    
+            <div class="row">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <label class="form-label" for="password-input">Password</label>
+                        <input class="form-control" type="password" name="password" id="password-input"
+                            placeholder="Password">
+                    </div>
+                </div>
+    
+                <div class="col-md">
+                    <div class="form-floating">
+                        <label class="form-label" for="password-input">Date of Birth</label>
+                        <input class="form-control" type="date" name="dateOfBirth" id="dateOfBirth-input"
+                            placeholder="dd/mm/yyyy">
+                    </div>
+                </div>
+    
+                
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <label class="form-label" for="avatarURL-input">Foto de perfil</label>
+                        <input type="text" name="avatarURL" id="avatarURL-input" class="form-control" placeholder="Imagen">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                
+                <div class="col-md">
+                    
+                    <label class="form-label" for="gender-input">Gender</label>
+    
+                    <div class="input-group">
+                        <select class="form-select" name="gender" id="gender-input">
+                            <option value="male" selected>Hombre</option>
+                            <option value="female">Mujer</option>
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md">
+                   <label class="form-label" for="hairColor-input">Hair Color</label>
+                    <div class="input-group">
+                        <select class="form-select" name="hairColor" id="hairColor-input">
+                            <option value="black">Negro</option>
+                            <option value="brunette">Moreno</option>
+                            <option value="blonde">Rubio</option>
+                            <option value="ginger">Pelirrojo</option>
+                            <option value="white">Blanco</option>
+                            <option value="gray">Gris</option>
+                            <option value="other">Otro</option>
+                        </select>
+                    </div>
+                    
+                </div>
+    
+                <div class="col-md">
+                    <label for="eyeColor" class="form-label">Eye Color</label>
+                        <div class="input-group">
+                            <select class="form-select" name="eyeColor" id="eyeColor-input" >
+                                <option selected value="black">Negro</option>
+                                <option value="brown">Marrón</option>
+                                <option value="blue">Azul</option>
+                                <option value="green">Verde</option>
+                                <option value="gray">Gris</option>
+                                <option value="other">Otro</option>
+                            </select>
+                        </div>
+                    
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <label class="form-label" for="height-input">Height</label>
+                        <input class="form-control" type="number" name="height" id="height-input"
+                            placeholder="170cm" value="170">
+                    </div>
+                </div>
+    
+                <div class="col-md">
+                    <div class="form-floating">
+                        <label class="form-label" for="wheight-input">Wheight</label>
+                        <input class="form-control" type="number" name="wheight" id="wheight-input"
+                            placeholder="75Kg" value="75">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <label class="form-label" for="bio-input">Biography</label>
+                        <input class="form-control" type="text" name="bio" id="bio-input"
+                            placeholder="Text here your biography">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-md">
+                    <div class="form-floating">
+                        <label class="form-label" for="address-input">Address</label>
+                        <input class="form-control" type="text" name="address" id="address-input"
+                            placeholder="C/AMORES 37">
+                    </div>
+                </div>
+                <div class="col-md">
+                    <label for="province-input">Provincia</label>
+                   <div class="input-group" id="province-select-container">
+                       
+                   </div>
+                </div>
+                <div class="col-md">
+                    <div class="form-floating">
+                        <label class="form-label" for="postcodeId-input">Post Code</label>
+                        <input class="form-control" type="number" name="postcodeId" id="postcodeId-input"
+                            placeholder="29400">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row text-center">
+                <div class="col-md">
+                   <center><button class="btn btn-primary" type="submit">Enviar</button></center> 
+                </div>
+            </div>
+    
+        </form>
+    </div>
+    
+    <script>
+        include("header.html", "#page-header");
+    </script>
+</body>
+</html>

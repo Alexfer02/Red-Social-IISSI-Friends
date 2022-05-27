@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style_chats.css">
+  <link rel="icon" href="web\images\favicon.ico">
+  <script src="/js/utils/include.js"></script>
+
+  <title>Chats</title>
+
+  <meta name=" viewport " content=" width=device-width , initial-scale=1 ,shrink-to-fit=no ">
+  <link rel=" stylesheet " href="/css/bootstrap.min.css ">
+  <link rel=" stylesheet " href="/css/font-awesome.min.css ">
+  <script src="/js/libs/jquery-3.4.1.min.js "> </script>
+  <script src="/js/libs/popper.min.js "> </script>
+  <script src="/js/libs/bootstrap.min.js "> </script>
+
+</head>
+
+<body>
+
+  <div>
+    <h1 id="title" class="pt-3">IISSI-Friends</h1>
+    <h2 id="subtitle">Universidad de Sevilla</h2>
+    
+    <button class="pulse mr-2 ml-3" onclick="window.location.href='index.html'">
+      <i class="fa fa-home pr-2" aria-hidden="true"></i>
+        Inicio
+    </button>
+    <button class="pulse" onclick="window.location.href='profile.html'">
+      <i class="fa fa-backward pr-2" aria-hidden="true"></i>
+        Volver
+    </button>
+  </div>  
+  
+
+  <div class='container'>
+    
+    <div class='inbox'>
+      <aside>
+        <ul ng-controller='chatCtrl as chat'>
+          <div ng-repeat='chat in chats'>
+            <li ng-click='uid(chat.id)'>
+              <img class='avatar'
+                src='https://static.vecteezy.com/system/resources/previews/001/993/889/non_2x/beautiful-latin-woman-avatar-character-icon-free-vector.jpg'>
+              <p class='username'>ML</p>
+            </li>
+            <li ng-click='uid(chat.id)'>
+              <img class='avatar' src='https://cdn.pixabay.com/photo/2021/07/02/04/48/user-6380868_960_720.png'>
+              <p class='username'>Luismi</p>
+            </li>
+            <li ng-click='uid(chat.id)'>
+              <img class='avatar' src='https://i.blogs.es/e32e91/trucos-enfocar-fotografia-paisaje-01/1366_2000.jpg'>
+              <p class='username'>Cisko</p>
+            </li>
+            <li ng-click='uid(chat.id)'>
+              <img class='avatar'
+                src='https://services.meteored.com/img/article/tiempo-de-la-semana-santa-2022-lluvias-temperaturas-en-espana-1647424043016_1280.jpg'>
+              <p class='username'>Alexfer</p>
+            </li>
+          </div>
+        </ul>
+      </aside>
+      <main ng-controller='chatCtrl as chat'>
+        <div class='message-wrap' ng-repeat='message in chats' ng-show='value == message.id'>
+          <!-- Repetir cada div para un mensaje nuevo -->
+          <div class='message' ng-repeat='i in message.messages track by $index'>
+            <p>Hola! Que tal?</p>
+          </div>
+          <div class='message' ng-repeat='i in message.messages track by $index'>
+            <p>Bien!! En mi pueblo de vacass :)</p>
+            <img
+              ng-src='https://static.vecteezy.com/system/resources/previews/001/993/889/non_2x/beautiful-latin-woman-avatar-character-icon-free-vector.jpg'>
+          </div>
+          <div class='message' ng-repeat='i in message.messages track by $index'>
+            <p>Que guaiii, pasadlo muy bien</p>
+          </div>
+          <div class='message' ng-repeat='i in message.messages track by $index'>
+            <p>Oye y los examenes como salieron</p>
+            <img
+              ng-src='https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png'>
+          </div>
+          <div class='message' ng-repeat='i in message.messages track by $index'>
+            <p>Bueeeeno, mas o menos. Algunos mejor que otros, tu sabes...</p>
+          </div>
+          <div class='message' ng-repeat='i in message.messages track by $index'>
+            <p>Yaaa....bueno, ahora a descansar</p>
+            <img
+              ng-src='https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes.png'>
+          </div>
+        </div>
+
+        <footer>
+          <form ng-submit='add()'>
+            <input ng-model='text' placeholder='Escribe tu mensaje...' type='text'>
+            <input type='submit' value='Enviar'>
+          </form>
+        </footer>
+      </main>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>

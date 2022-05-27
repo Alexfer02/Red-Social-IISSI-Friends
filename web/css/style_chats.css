@@ -1,0 +1,253 @@
+html, body {
+    background: linear-gradient(180deg, #507fb5, #97c5d89e);
+    overflow-x: hidden;
+}
+
+#title {
+    font-size: 250%;
+    text-align: center;
+    text-decoration: dotted;
+    color: rgb(255, 255, 255);
+    font-family: Helvetica, sans-serif;
+    margin-bottom: 0;
+    margin-top: 0em;
+}
+
+#subtitle {
+    font-size: 88%;
+    text-align: center;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.863);
+    font-family: monospace;
+}
+
+
+div.photo-block {
+    text-align: center;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 10px;
+    font-family: sans-serif;
+    margin: 2px;
+    padding: 2px;
+    transition: all 0.2s;
+}
+
+div.photo-block:hover {
+    border-color: white;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+/*Boton*/
+
+button {
+    color: var(--color);
+    transition: 0.25s;
+    background: none;
+    border: 3px solid;
+    font: bold;
+    line-height: 1;
+    margin: 0em;
+    padding: 0.5em 1em;
+}
+
+button:hover, button:focus {
+    border-color: var(--hover);
+    color: #fff;
+}
+
+.pulse:hover,
+.pulse:focus {
+  -webkit-animation: button 1s;
+          animation: button 1s;
+  box-shadow: 0 0 0 2em transparent;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 var(--hover);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 var(--hover);
+    }
+  }
+
+.pulse {
+    --color: #6cf87a;
+    --hover: #103c8bf1;
+}
+
+/*----------------------------------------------------*/
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 83vh;
+}
+
+.inbox {
+    background: #EDF2F4;
+    width: 650px;
+    height: 450px;
+    display: flex;
+    border-radius: 4px;
+}
+
+.inbox aside {
+    background: rgba(182, 197, 240, 0.856);
+    flex: 1 1 auto;
+    height: 100%;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+
+.inbox aside .avatar {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #FFF;
+    border-radius: 100%;
+}
+
+.inbox aside li {
+    background: rgba(182, 197, 240, 0.856);
+    list-style: none;
+    color: rgb(14, 7, 109);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2em;
+    align-items: center;
+    height: 5em;
+    font-size: 0.8em;
+    cursor: pointer;
+    border-bottom: 1px solid rgb(23, 13, 117);
+    border-top-left-radius: 4px;
+}
+
+.inbox aside li:hover {
+    background: #82c77fb0;
+}
+
+.inbox main {
+    background: #EDF2F4;
+    height: 100%;
+    flex: 1 1 70%;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transform: scale(1.035);
+}
+
+.inbox main .message-wrap {
+    height: 88%;
+    overflow-y: scroll;
+}
+
+.inbox main .message {
+    background: rgba(182, 197, 240, 0.856);
+    width: 70%;
+    margin: 1em 6em;
+    padding: 1em;
+    border-radius: 4px;
+    opacity: 1;
+    transition: opacity ease-in-out 0.45s;
+}
+
+.inbox main .message p {
+    font-size: 0.68em;
+    color: rgb(17, 14, 14);
+    font-weight: 300;
+}
+
+.inbox main .message img {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    transform: translateX(-70px) translateY(-20px);
+    float: left;
+}
+
+.inbox main .message:nth-of-type(even) {
+    background: #7edd7ef1;
+    margin: 1em 1em;
+}
+
+/*pie del recuadro, donde enviamos los mensajes*/
+.inbox main footer {
+    position: fixed;
+    bottom: 0;
+    height: 12%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #e0e9ec;
+}
+
+.inbox main footer input[type=text] {
+    border: none;
+    background: transparent;
+    padding: 0.8em;
+    /*outline: none;*/
+    color: rgb(44, 44, 46);
+    font-style: oblique;
+    width: 100%;
+}
+
+.inbox main footer input[type=submit] {
+    background: #103c8bf1;
+    color: rgb(255, 255, 255);
+    font-weight:bolder;
+    width: 17%;
+    border-radius: 4px;
+    padding: 0.8em;
+    margin: 0 1em;
+    border: none;
+    cursor: pointer;
+}
+
+.inbox main footer form {
+    width: 100%;
+    display: flex;
+}
+
+.init {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    text-align: center;
+}
+
+
+.init h4 {
+    margin: 1em auto;
+    color: #000000;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(131, 128, 128, 0);
+}
+
+

@@ -1,0 +1,36 @@
+body{
+    background-color: var(--white);
+	background: url("https://img.freepik.com/foto-gratis/resumen-fondo-azul-gradiente-fondo-azul-pagina-web-o-presentacion_79161-487.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.centered {
+    text-align: center;
+}
+
+.form-block label {
+    display: block;
+}
+
+.form-block {
+    margin-bottom: 1%;
+}
+
+.form-floating{
+    display: block;
+}
+
+#page-header {
+    margin-bottom: 2%;
+}
+
+button[type="submit"] {
+    margin-top: 1.5%;
+    background-color: green;
+}
+
+label{
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+}

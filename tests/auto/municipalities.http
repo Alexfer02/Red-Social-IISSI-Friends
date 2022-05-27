@@ -1,0 +1,122 @@
+
+### THIS IS AN AUTO-GENERATED TEST SUITE, IT NEEDS TO BE COMPLETED WITH VALID DATA
+### THESE ARE NOT ALL YOU NEED, MORE OF THEM MUST BE CREATED TO EVALUATE THE FUNCTIONAL
+### REQUIREMENTS OF THE PROJECT AT HAND, THESE TEST ONLY TEST THE CRUD PORTION OF THE ENTITY.
+### Silence is a DEAL research team project, more info about us in https://deal.us.es
+@BASE = http://127.0.0.1:8080/api/v1
+
+### Auxiliary query
+### Positive test
+### Test 00: Get all existing municipalities
+### This query is used in several of the below tests it should be executed first.
+# @name municipalities
+GET {{BASE}}/municipalities
+
+### Register a new users and save the generated token 
+### This token is used in several of the below tests it should be executed second.
+# @name register
+POST {{BASE}}/register 
+Content-Type: application/json 
+
+{ 
+	"username": ###REPLACE###,
+	"email": ###REPLACE###,
+	"password": ###REPLACE###,
+	"dateOfBirth": ###REPLACE###,
+	"registrationDate": ###REPLACE###,
+	"withdrawalDate": ###REPLACE###,
+	"gender": ###REPLACE###,
+	"hairColor": ###REPLACE###,
+	"eyeColor": ###REPLACE###,
+	"height": ###REPLACE###,
+	"wheight": ###REPLACE###,
+	"bio": ###REPLACE###,
+	"address": ###REPLACE###,
+	"provinceId": ###REPLACE###,
+	"municipalityId": ###REPLACE###,
+	"postcodeId": ###REPLACE###
+}
+
+###
+@token = {{register.response.body.sessionToken}}
+
+### Test 01: Get one existing municipalities by its id.
+### positive test 
+@munId = {municipalities.response.body.0.municipalityId}
+GET {{BASE}}/municipalities/{{munId}} 
+Content-Type: application/json 
+
+
+### Test 02: Try get one existing municipalities by its nonexistent id.
+### negative test 
+GET {{BASE}}/municipalities/999999999
+Content-Type: application/json 
+
+
+### Test 03: Add a new municipalities successfully
+### Positive test 
+### We assume that the token has been aquired by the register request.
+POST {{BASE}}/municipalities 
+Content-Type: application/json 
+Token: {{token}} 
+
+{
+	"provinceId": ###REPLACE###,
+	"municipalityName": ###REPLACE###
+} 
+
+### Test 04: Add a new municipalities without a session token
+### Negative test 
+POST {{BASE}}/municipalities 
+Content-Type: application/json 
+
+{ 
+	"provinceId": ###REPLACE###,
+	"municipalityName": ###REPLACE###
+}
+
+### Test 05: Modify an existing municipalities 
+### Positive test 
+@munId = {{municipalities.response.body.0.municipalityId}} 
+PUT {{BASE}}/municipalities/{{munId}} 
+Content-Type: application/json 
+Token: {{token}} 
+
+{ 
+	"provinceId": ###REPLACE###,
+	"municipalityName": ###REPLACE###
+}
+
+### Test 06: Try to modify an existing municipalities without a session token
+### Negative test
+@munId = {{municipalities.response.body.0.municipalityId}}
+PUT {{BASE}}/municipalities/{{munId}}
+Content-Type: application/json
+
+{
+	"provinceId": ###REPLACE###,
+	"municipalityName": ###REPLACE###
+}
+
+### Test 07: Delete an existing municipalities
+### Positive test
+
+### Create a new municipalities, which we will delete
+# @name createdmunToDelete
+POST {{BASE}}/municipalities
+Content-Type: application/json
+Token: {{token}}
+
+{
+	"provinceId": ###REPLACE###,
+	"municipalityName": ###REPLACE###
+}
+### Delete the municipalities
+@deptId = {createdmunToDelete.response.body.lastId}
+DELETE {{BASE}}/municipalities/{{munId}}
+Token: {{token}}
+
+### Test 08: Try to delete a department without a session token
+### Negative test
+DELETE {{BASE}}/municipalities/{{munId}}
+

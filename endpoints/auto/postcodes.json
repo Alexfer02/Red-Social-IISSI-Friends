@@ -1,0 +1,60 @@
+{
+    "getAll": {
+        "route": "/postcodes",
+        "method": "GET",
+        "sql": "SELECT * FROM postcodes",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all postcodes"
+    },
+    "getById": {
+        "route": "/postcodes/$postcodeId",
+        "method": "GET",
+        "sql": "SELECT * FROM postcodes WHERE postcodeId = $postcodeId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'postcodes' by its primary key"
+    },
+    "create": {
+        "route": "/postcodes",
+        "method": "POST",
+        "sql": "INSERT INTO postcodes(municipalityId, postcode) VALUES ($municipalityId, $postcode)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'postcodes'",
+        "request_body_params": [
+            "municipalityId",
+            "postcode"
+        ]
+    },
+    "update": {
+        "route": "/postcodes/$postcodeId",
+        "method": "PUT",
+        "sql": "UPDATE postcodes SET municipalityId = $municipalityId, postcode = $postcode WHERE postcodeId = $postcodeId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'postcodes' by its primary key",
+        "request_body_params": [
+            "municipalityId",
+            "postcode"
+        ]
+    },
+    "delete": {
+        "route": "/postcodes/$postcodeId",
+        "method": "DELETE",
+        "sql": "DELETE FROM postcodes WHERE postcodeId = $postcodeId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'postcodes' by its primary key"
+    }
+}

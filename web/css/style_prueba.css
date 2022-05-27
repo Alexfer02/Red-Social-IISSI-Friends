@@ -1,0 +1,67 @@
+#header {
+  font-size: larger;
+  font-family: Helvetica, sans-serif;
+  color: white;
+  background: linear-gradient(30deg, rgb(255, 158, 48),rgb(79, 204, 135), royalblue);
+  text-decoration: underline;
+}
+
+#piepag{
+  background: linear-gradient(30deg, rgb(255, 158, 48),rgb(79, 204, 135), royalblue);
+  text-align: end;
+}
+
+
+h2 {
+  text-align: center;
+  color: rgb(40, 60, 153);
+}
+
+h5{
+  color: rgb(28, 44, 119);
+}
+
+h6{
+  font-style: oblique;
+}
+
+button {
+  color: var(--color);
+  transition: 0.25s;
+  background: none;
+  border: 3px solid;
+  font: bold;
+  line-height: 1;
+  margin: 0em;
+  text-align: center;
+  align-content: center;
+}
+
+button:hover, button:focus {
+  border-color: var(--hover);
+  color: rgb(64, 53, 218);
+}
+
+.pulse:hover,
+.pulse:focus {
+-webkit-animation: button 1s;
+        animation: button 1s;
+box-shadow: 0 0 0 2em transparent;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--hover);
+  }
+}
+
+.pulse {
+  --color: #ffffff;
+  --hover: #2931d4;
+}

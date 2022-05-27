@@ -1,0 +1,43 @@
+:calendar-day {
+    --calendar-color: #ea0100;
+  }
+  .calendar-day{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+.calendar-day{
+    position: relative;
+    width: 300px;
+    height: 320px;
+  
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    
+  }
+  .calendar-day #monthName {
+    width: 200px;
+    height: 44px;
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+  
+    background-color: var(--calendar-color);
+  }
+  .calendar-day  #dayName {
+    margin-top: 20px;
+    font-size: 20px;
+    height: 30px;
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+    text-transform: capitalize;
+  }
+  .calendar-day #dayNumber {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 1em;
+    color: rgb(255, 0, 0);
+  }

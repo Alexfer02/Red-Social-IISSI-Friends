@@ -1,0 +1,60 @@
+{
+    "getAll": {
+        "route": "/municipalities",
+        "method": "GET",
+        "sql": "SELECT * FROM municipalities",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all municipalities"
+    },
+    "getById": {
+        "route": "/municipalities/$municipalityId",
+        "method": "GET",
+        "sql": "SELECT * FROM municipalities WHERE municipalityId = $municipalityId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'municipalities' by its primary key"
+    },
+    "create": {
+        "route": "/municipalities",
+        "method": "POST",
+        "sql": "INSERT INTO municipalities(provinceId, municipalityName) VALUES ($provinceId, $municipalityName)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'municipalities'",
+        "request_body_params": [
+            "provinceId",
+            "municipalityName"
+        ]
+    },
+    "update": {
+        "route": "/municipalities/$municipalityId",
+        "method": "PUT",
+        "sql": "UPDATE municipalities SET provinceId = $provinceId, municipalityName = $municipalityName WHERE municipalityId = $municipalityId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'municipalities' by its primary key",
+        "request_body_params": [
+            "provinceId",
+            "municipalityName"
+        ]
+    },
+    "delete": {
+        "route": "/municipalities/$municipalityId",
+        "method": "DELETE",
+        "sql": "DELETE FROM municipalities WHERE municipalityId = $municipalityId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'municipalities' by its primary key"
+    }
+}

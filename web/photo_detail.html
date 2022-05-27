@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/photo_detail.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <script src="/js/libs/jquery-3.4.1.min.js "> </script>
+    <script src="js/libs/bootstrap.min.js"></script>
+    <script src="js/utils/include.js"></script>
+    <script src="js/libs/axios.min.js"></script>
+    <script src="js/photo_detail.js" type="module"></script>
+    <script src="js/header.js" type="module"></script>
+    <title>View photo</title>
+</head>
+
+<body class="a">
+    <div id="page-header"></div>
+
+    <div class="container">
+
+        <div id="errors"></div>
+
+        <div class="row text-center">
+
+            <div class="col-md" id="photo-details-column">
+            </div>
+
+            </div>
+
+            
+        </div>
+
+        <hr>
+
+        <div class="row text-center">
+            <div class="col-md">
+
+                <div>
+                    <h4>Rate this photo: </h4>
+
+                    <button class="btn btn-success">
+                        <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                    </button>
+
+                    <button class="btn btn-danger">
+                        <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                    </button>
+                </div>
+
+                <div>
+                    <button id="button-edit" class="btn btn-primary">Edit this photo</button>
+
+                </div>
+
+                <div>
+                    <button id="button-delete" class="btn btn-danger">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        Delete this photo
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        include("header.html", "#page-header");
+    </script>
+</body>
+
+</html>

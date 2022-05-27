@@ -1,0 +1,90 @@
+{
+    "getAll": {
+        "route": "/users",
+        "method": "GET",
+        "sql": "SELECT * FROM users",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all users"
+    },
+    "getById": {
+        "route": "/users/$userId",
+        "method": "GET",
+        "sql": "SELECT * FROM users WHERE userId = $userId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'users' by its primary key"
+    },
+    "create": {
+        "route": "/users",
+        "method": "POST",
+        "sql": "INSERT INTO users(username, email, password, dateOfBirth, registrationDate, withdrawalDate, gender, hairColor, eyeColor, height, wheight, bio, address, provinceId, municipalityId, postcodeId, avatarURL) VALUES ($username, $email, $password, $dateOfBirth, $registrationDate, $withdrawalDate, $gender, $hairColor, $eyeColor, $height, $wheight, $bio, $address, $provinceId, $municipalityId, $postcodeId, $avatarURL)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'users'",
+        "request_body_params": [
+            "username",
+            "email",
+            "password",
+            "dateOfBirth",
+            "registrationDate",
+            "withdrawalDate",
+            "gender",
+            "hairColor",
+            "eyeColor",
+            "height",
+            "wheight",
+            "bio",
+            "address",
+            "provinceId",
+            "municipalityId",
+            "postcodeId",
+            "avatarURL"
+        ]
+    },
+    "update": {
+        "route": "/users/$userId",
+        "method": "PUT",
+        "sql": "UPDATE users SET username = $username, email = $email, password = $password, dateOfBirth = $dateOfBirth, registrationDate = $registrationDate, withdrawalDate = $withdrawalDate, gender = $gender, hairColor = $hairColor, eyeColor = $eyeColor, height = $height, wheight = $wheight, bio = $bio, address = $address, provinceId = $provinceId, municipalityId = $municipalityId, postcodeId = $postcodeId, avatarURL = $avatarURL WHERE userId = $userId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'users' by its primary key",
+        "request_body_params": [
+            "username",
+            "email",
+            "password",
+            "dateOfBirth",
+            "registrationDate",
+            "withdrawalDate",
+            "gender",
+            "hairColor",
+            "eyeColor",
+            "height",
+            "wheight",
+            "bio",
+            "address",
+            "provinceId",
+            "municipalityId",
+            "postcodeId",
+            "avatarURL"
+        ]
+    },
+    "delete": {
+        "route": "/users/$userId",
+        "method": "DELETE",
+        "sql": "DELETE FROM users WHERE userId = $userId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'users' by its primary key"
+    }
+}

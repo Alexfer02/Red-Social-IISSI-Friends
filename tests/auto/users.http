@@ -1,0 +1,192 @@
+
+### THIS IS AN AUTO-GENERATED TEST SUITE, IT NEEDS TO BE COMPLETED WITH VALID DATA
+### THESE ARE NOT ALL YOU NEED, MORE OF THEM MUST BE CREATED TO EVALUATE THE FUNCTIONAL
+### REQUIREMENTS OF THE PROJECT AT HAND, THESE TEST ONLY TEST THE CRUD PORTION OF THE ENTITY.
+### Silence is a DEAL research team project, more info about us in https://deal.us.es
+@BASE = http://127.0.0.1:8080/api/v1
+
+### Auxiliary query
+### Positive test
+### Test 00: Get all existing users
+### This query is used in several of the below tests it should be executed first.
+# @name users
+GET {{BASE}}/users
+
+### Register a new users and save the generated token 
+### This token is used in several of the below tests it should be executed second.
+# @name register
+POST {{BASE}}/register 
+Content-Type: application/json 
+
+{ 
+	"username": ###REPLACE###,
+	"email": ###REPLACE###,
+	"password": ###REPLACE###,
+	"dateOfBirth": ###REPLACE###,
+	"registrationDate": ###REPLACE###,
+	"withdrawalDate": ###REPLACE###,
+	"gender": ###REPLACE###,
+	"hairColor": ###REPLACE###,
+	"eyeColor": ###REPLACE###,
+	"height": ###REPLACE###,
+	"wheight": ###REPLACE###,
+	"bio": ###REPLACE###,
+	"address": ###REPLACE###,
+	"provinceId": ###REPLACE###,
+	"municipalityId": ###REPLACE###,
+	"postcodeId": ###REPLACE###
+}
+
+###
+@token = {{register.response.body.sessionToken}}
+
+### Test 01: Get one existing users by its id.
+### positive test 
+@useId = {users.response.body.0.userId}
+GET {{BASE}}/users/{{useId}} 
+Content-Type: application/json 
+
+
+### Test 02: Try get one existing users by its nonexistent id.
+### negative test 
+GET {{BASE}}/users/999999999
+Content-Type: application/json 
+
+
+### Test 03: Add a new users successfully
+### Positive test 
+### We assume that the token has been aquired by the register request.
+POST {{BASE}}/users 
+Content-Type: application/json 
+Token: {{token}} 
+
+{
+	"username": ###REPLACE###,
+	"email": ###REPLACE###,
+	"password": ###REPLACE###,
+	"dateOfBirth": ###REPLACE###,
+	"registrationDate": ###REPLACE###,
+	"withdrawalDate": ###REPLACE###,
+	"gender": ###REPLACE###,
+	"hairColor": ###REPLACE###,
+	"eyeColor": ###REPLACE###,
+	"height": ###REPLACE###,
+	"wheight": ###REPLACE###,
+	"bio": ###REPLACE###,
+	"address": ###REPLACE###,
+	"provinceId": ###REPLACE###,
+	"municipalityId": ###REPLACE###,
+	"postcodeId": ###REPLACE###
+} 
+
+### Test 04: Add a new users without a session token
+### Negative test 
+POST {{BASE}}/users 
+Content-Type: application/json 
+
+{ 
+	"username": ###REPLACE###,
+	"email": ###REPLACE###,
+	"password": ###REPLACE###,
+	"dateOfBirth": ###REPLACE###,
+	"registrationDate": ###REPLACE###,
+	"withdrawalDate": ###REPLACE###,
+	"gender": ###REPLACE###,
+	"hairColor": ###REPLACE###,
+	"eyeColor": ###REPLACE###,
+	"height": ###REPLACE###,
+	"wheight": ###REPLACE###,
+	"bio": ###REPLACE###,
+	"address": ###REPLACE###,
+	"provinceId": ###REPLACE###,
+	"municipalityId": ###REPLACE###,
+	"postcodeId": ###REPLACE###
+}
+
+### Test 05: Modify an existing users 
+### Positive test 
+@useId = {{users.response.body.0.userId}} 
+PUT {{BASE}}/users/{{useId}} 
+Content-Type: application/json 
+Token: {{token}} 
+
+{ 
+	"username": ###REPLACE###,
+	"email": ###REPLACE###,
+	"password": ###REPLACE###,
+	"dateOfBirth": ###REPLACE###,
+	"registrationDate": ###REPLACE###,
+	"withdrawalDate": ###REPLACE###,
+	"gender": ###REPLACE###,
+	"hairColor": ###REPLACE###,
+	"eyeColor": ###REPLACE###,
+	"height": ###REPLACE###,
+	"wheight": ###REPLACE###,
+	"bio": ###REPLACE###,
+	"address": ###REPLACE###,
+	"provinceId": ###REPLACE###,
+	"municipalityId": ###REPLACE###,
+	"postcodeId": ###REPLACE###
+}
+
+### Test 06: Try to modify an existing users without a session token
+### Negative test
+@useId = {{users.response.body.0.userId}}
+PUT {{BASE}}/users/{{useId}}
+Content-Type: application/json
+
+{
+	"username": ###REPLACE###,
+	"email": ###REPLACE###,
+	"password": ###REPLACE###,
+	"dateOfBirth": ###REPLACE###,
+	"registrationDate": ###REPLACE###,
+	"withdrawalDate": ###REPLACE###,
+	"gender": ###REPLACE###,
+	"hairColor": ###REPLACE###,
+	"eyeColor": ###REPLACE###,
+	"height": ###REPLACE###,
+	"wheight": ###REPLACE###,
+	"bio": ###REPLACE###,
+	"address": ###REPLACE###,
+	"provinceId": ###REPLACE###,
+	"municipalityId": ###REPLACE###,
+	"postcodeId": ###REPLACE###
+}
+
+### Test 07: Delete an existing users
+### Positive test
+
+### Create a new users, which we will delete
+# @name createduseToDelete
+POST {{BASE}}/users
+Content-Type: application/json
+Token: {{token}}
+
+{
+	"username": ###REPLACE###,
+	"email": ###REPLACE###,
+	"password": ###REPLACE###,
+	"dateOfBirth": ###REPLACE###,
+	"registrationDate": ###REPLACE###,
+	"withdrawalDate": ###REPLACE###,
+	"gender": ###REPLACE###,
+	"hairColor": ###REPLACE###,
+	"eyeColor": ###REPLACE###,
+	"height": ###REPLACE###,
+	"wheight": ###REPLACE###,
+	"bio": ###REPLACE###,
+	"address": ###REPLACE###,
+	"provinceId": ###REPLACE###,
+	"municipalityId": ###REPLACE###,
+	"postcodeId": ###REPLACE###
+}
+### Delete the users
+@deptId = {createduseToDelete.response.body.lastId}
+DELETE {{BASE}}/users/{{useId}}
+Token: {{token}}
+
+### Test 08: Try to delete a department without a session token
+### Negative test
+DELETE {{BASE}}/users/{{useId}}
+

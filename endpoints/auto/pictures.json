@@ -1,0 +1,64 @@
+{
+    "getAll": {
+        "route": "/pictures",
+        "method": "GET",
+        "sql": "SELECT * FROM pictures",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets all pictures"
+    },
+    "getById": {
+        "route": "/pictures/$pictureId",
+        "method": "GET",
+        "sql": "SELECT * FROM pictures WHERE pictureId = $pictureId",
+        "auth_required": false,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Gets an entry from 'pictures' by its primary key"
+    },
+    "create": {
+        "route": "/pictures",
+        "method": "POST",
+        "sql": "INSERT INTO pictures(name, description, pictureURL, userId) VALUES ($name, $description, $pictureURL, $userId)",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Creates a new entry in 'pictures'",
+        "request_body_params": [
+            "name",
+            "description",
+            "pictureURL",
+            "userId"
+        ]
+    },
+    "update": {
+        "route": "/pictures/$pictureId",
+        "method": "PUT",
+        "sql": "UPDATE pictures SET name = $name, description = $description, pictureURL = $pictureURL, userId = $userId WHERE pictureId = $pictureId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Updates an existing entry in 'pictures' by its primary key",
+        "request_body_params": [
+            "name",
+            "description",
+            "pictureURL",
+            "userId"
+        ]
+    },
+    "delete": {
+        "route": "/pictures/$pictureId",
+        "method": "DELETE",
+        "sql": "DELETE FROM pictures WHERE pictureId = $pictureId",
+        "auth_required": true,
+        "allowed_roles": [
+            "*"
+        ],
+        "description": "Deletes an existing entry in 'pictures' by its primary key"
+    }
+}

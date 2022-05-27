@@ -1,0 +1,23 @@
+.video-js {
+    font-size: 10px;
+
+    color: #fff;
+}
+
+.vjs-default-skin .vjs-big-play-button {
+
+    font-size: 90px;
+    line-height: 45px;
+    height: 45px;
+    width: 90px;
+    border: 2px solid grey;
+    border-radius: 9px;
+
+}
+
+.video-js .vjs-control-bar,
+.video-js .vjs-big-play-button,
+.video-js .vjs-menu-button .vjs-menu-content {
+    background-color: #ff0000;
+    background-color: rgba(rgb(255, 0, 0), 0.7);
+}

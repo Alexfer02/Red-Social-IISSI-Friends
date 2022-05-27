@@ -1,0 +1,13 @@
+body{
+    background-color: var(--white);
+	background: url("https://img.freepik.com/foto-gratis/resumen-fondo-azul-gradiente-fondo-azul-pagina-web-o-presentacion_79161-487.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+button.btn{
+	background-color: white;
+	color: black;
+}
