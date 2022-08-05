@@ -17,54 +17,50 @@
     <script src="/js/libs/axios.min.js"></script>
     <script src="js/utils/include.js"></script>
     <script src="js/login.js" type="module"></script>
-    <script src="js/header.js" type="module"></script>
+
 
 </head>
 
 <body>
-    <center><div id="page-header"></div></center>
-    <div class="container" >
+    <div id="errors"></div>
+    <div class="container">
+        <div class="row">
+            <div id="log">
+                <div class="col-md">
+                    <img src="https://avatars.githubusercontent.com/u/56385235?s=280&v=4" alt="IISSI">
+                </div><br><br><br>
+                <div class="center-row">
+                    <form id="form-login">
+                        <div class="username">
+                            <div class="form-floating">
+                                <input class="form-control" type="text" name="username" id="username-input"
+                                    placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="username">
+                            <div class="form-floating">
+                                <input class="form-control" type="password" name="password" id="password-input"
+                                    placeholder="Password">
+                            </div>
+                        </div>
 
-        <div class="row text-center">
-            <div class="col-md">
-                <h1>Login</h1>
+
+                </div>
+                <br><br>
+                <div class="center-row">
+                    <center><button type="submit" class="btn btn-primary">ENVIAR</button></center>
+                    
+
+                </div>
+                </form>
             </div>
+
         </div>
+    </div>
 
-        <hr>
 
-        <div id="errors"></div>
-
-        <form id="form-login">
-            <div class="row">
-                <div class="col-md">
-                    <div class="form-floating">
-                        <label class="form-label" for="username-input">Username</label>
-                        <input class="form-control" type="text" name="username" id="username-input"
-                            placeholder="Username">
-                    </div>
-                </div>
-
-                <div class="col-md">
-                    <div class="form-floating">
-                        <label class="form-label" for="password-input">Password</label>
-                        <input class="form-control" type="password" name="password" id="password-input"
-                            placeholder="Password">
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br><br><br>
-            <div class="row text-center">
-                <div class="col-md">
-                    <button type="submit" class="btn btn-primary">Send</button>
-                </div>
-            </div>
-        </form>
 
     </div>
 </body>
-<script>
-    include("header.html", "#page-header");
-</script>
+
 </html>

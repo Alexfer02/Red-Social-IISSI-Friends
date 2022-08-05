@@ -1,13 +1,99 @@
-body{
-    background-color: var(--white);
-	background: url("https://img.freepik.com/foto-gratis/resumen-fondo-azul-gradiente-fondo-azul-pagina-web-o-presentacion_79161-487.jpg");
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
+
 
 button.btn{
 	background-color: white;
 	color: black;
+}
+div.container{
+	color: #262626;
+    color: rgba(var(--i1d,38,38,38),1);
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 12px;
+    max-width: 350px;
+}
+
+div#log{
+	-webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #fff;
+    background-color: rgba(var(--d87,255,255,255),1);
+    border: 1px solid #dbdbdb;
+    border: 1px solid rgba(var(--b6a,219,219,219),1);
+    border-radius: 1px;
+    margin: 0 0 10px;
+    padding: 10px 0;
+}
+
+
+div.username{
+	-webkit-text-size-adjust: 100%;
+    --f52: 142,142,142;
+    --h1d: 255,255,255;
+    --de5: 255,255,255;
+    --d69: 0,149,246;
+    --b86: 88,195,34;
+    --i30: 237,73,86;
+    --d62: 255,255,255;
+    --e4f: 54,54,54;
+    --a72: 255,255,255;
+    --ie3: 142,142,142;
+    --c37: 237,73,86;
+    --f24: 0,149,246;
+    --daf: 255,1,105;
+    --f76: 28,209,79;
+    --jbb: 53,121,234;
+    --aab: 118,56,250;
+    --eca: 255,255,255;
+    --jb7: 0,0,0;
+    --fa7: 224,241,255;
+    --aa6: 38,38,38;
+    --ba8: 168,168,168;
+    --eac: 237,73,86;
+    --i1d: 38,38,38;
+    --edc: 199,199,199;
+    --f75: 38,38,38;
+    --fe0: 0,55,107;
+    --d87: 255,255,255;
+    --b3f: 250,250,250;
+    --bb2: 239,239,239;
+    --f23: 255,255,255;
+    --b38: 219,219,219;
+    --b6a: 219,219,219;
+    --ca6: 219,219,219;
+    --cdd: 38,38,38;
+    --e22: 199,199,199;
+    --e62: 245,251,255;
+    --b2f: 88,195,34;
+    --c8c: 168,168,168;
+    --ce3: 239,239,239;
+    --jd9: 0,0,0;
+    --j64: 54,54,54;
+    --a97: 243,243,243;
+    --d20: 38,38,38;
+    --in-feed-story-item-padding: 12px;
+    --desktop-nav-height: 60px;
+    color: rgba(var(--i1d,38,38,38),1);
+    font: inherit;
+    vertical-align: baseline;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    border: 0 solid #000;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    flex-shrink: 0;
+    padding: 0;
+    position: relative;
+    margin: 0 40px 6px;
 }
