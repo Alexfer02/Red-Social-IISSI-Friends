@@ -35,22 +35,18 @@ El proyecto se diseñó con un enfoque **modular, probado y documentado**, asegu
 - **Base de datos**: MySQL/MariaDB
 - **Testing**: pruebas automáticas incluidas en `/tests`
 
-📂 Estructura principal del repositorio:
+---
 
-├── web/ # Interfaz web y recursos del frontend
-├── endpoints/ # Lógica del backend y APIs
-├── sql/ # Scripts y modelo relacional de la BD
-├── tests/ # Conjunto de pruebas automatizadas
-└── settings.py # Configuración del sistema
-
-🏆 Resultados y logros
+## 🏆 Resultados y logros
 
 ✔️ Proyecto evaluado con un 10 por la calidad técnica, la organización y la implementación de funcionalidades.
 ✔️ Desarrollo completo de una red social con frontend, backend, base de datos y pruebas.
 ✔️ Trabajo en equipo multidisciplinar, gestionando roles y responsabilidades.
 ✔️ Aplicación de buenas prácticas de programación y diseño de software.
 
-📚 Información sobre Silence
+---
+
+## 📚 Información sobre Silence
 
 Silence es un framework desarrollado por el grupo de investigación DEAL de la Universidad de Sevilla que permite la creación ágil de APIs RESTful y aplicaciones web alrededor de una base de datos relacional. Está diseñado como herramienta educativa para facilitar el desarrollo web en entornos académicos.
 
